@@ -2,6 +2,7 @@ const Military_Product = require("../models/ProductModel")
 const path = require('path')
 const fs = require("fs")
 const mailService = require("../services/mail_service")
+const sendMessageMailService = require("../services/send_message_mail_service")
 
 class ProductController {
     async addProduct(req, res, next) {
@@ -43,6 +44,12 @@ class ProductController {
   
     res.json({work: "done"})
   }
+
+    async feedbackSendMessage (req, res, next) {
+        console.log(req.body)
+        await sendMessageMailService.sendActivationMail("adrefsewer@gmail.com", req.body)
+        res.json({work: "done"})
+    }
 
 
 }

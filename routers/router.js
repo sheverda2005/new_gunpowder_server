@@ -10,5 +10,7 @@ router.get("/getImage/:imageName", ProductController.getImage)
 
 router.post("/getOrderData", ProductController.getOrderData)
 
+router.post("/feedbackSendMessage", ProductController.feedbackSendMessage)
+
 module.exports = router;
 
