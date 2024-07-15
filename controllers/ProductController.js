@@ -17,6 +17,16 @@ class ProductController {
       res.json(products)
     }
 
+    async getOneProduct (req, res, next) {
+        try {
+            const product = await Military_Product.findOne({_id: req.query.product})
+            res.json(product)
+        } catch (e) {
+            next(e)
+        }
+    }
+
+
     getImage (req, res) {
       const imageName = req.params.imageName
       fs.readFile(path.join(__dirname, "..", '/images',`/${imageName}`), (err, data) => {

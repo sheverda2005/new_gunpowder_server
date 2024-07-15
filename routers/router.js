@@ -6,6 +6,9 @@ router.post("/addProduct", ProductController.addProduct)
 
 router.get("/getAllProducts", ProductController.getAllProducts)
 
+router.get("/getOneProduct", ProductController.getOneProduct)
+
+
 router.get("/getImage/:imageName", ProductController.getImage)
 
 router.post("/getOrderData", ProductController.getOrderData)
